@@ -8,7 +8,7 @@ var list = [];
 
 function addPag() {
     var elem = document.getElementById("txt").value;
-    txt.value="";
+    txt.value = "";
     try {
         add(list, elem);
         resultado.innerHTML = toString(list);
@@ -18,11 +18,11 @@ function addPag() {
     }
 }
 
-function removePag(){
+function removePag() {
     var elem = document.getElementById("txt").value;
-    txt.value="";
+    txt.value = "";
     try {
-        removeElement(list,elem);
+        removeElement(list, elem);
         resultado.innerHTML = toString(list);
     } catch (err) {
         resultado.innerHTML = "Error! " + err;
@@ -261,6 +261,7 @@ function test() {
         console.log("Error! " + err);
     }
 }
+
 // main
 create(5);
 test();
