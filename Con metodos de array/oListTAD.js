@@ -49,7 +49,8 @@ function size(oList) {
 }
 
 
-function add(oList, elemento) {
+// Este método hecho de esta forma funciona, pero hay casos en los que falla y no sé porqué.
+/*function add(oList, elemento) {
     var index;
     if (isNaN(elemento)) throw "El elemeto introducido no es un number";
     if (isFull(oList)) throw "La lista esta llena";
@@ -59,7 +60,21 @@ function add(oList, elemento) {
         return elem > elemento;
     });
     oList.splice(index, 0, elemento);
+
+    return size(oList);
+}*/
+
+function add(oList, elemento) {
+    var index;
+    if (isNaN(elemento)) throw "El elemeto introducido no es un number";
+    if (isFull(oList)) throw "La lista esta llena";
+
+    oList.push(elemento);
+    oList.sort();
+
+    return size(oList);
 }
+
 
 function get(oList, index) {
     var tamano = size(oList);
